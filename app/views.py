@@ -13,6 +13,8 @@ def getsession(request):
 
 #function for deleting session
 def delsession(request):
-    if 'name' in request.session:
-        del request.session['name']
+    # if 'name' in request.session:
+    #     del request.session['name']
+    request.session.flush()
+    request.session.clear_expired()
     return render(request,'app/delsession.html')
