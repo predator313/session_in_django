@@ -118,6 +118,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 SESSION_COOKIE_AGE=20
+#saving session in the file
+#we need to user our own path
+SESSION_ENGINE='django.contrib.sessions.backends.file'
+SESSION_FILE_PATH=BASE_DIR/'sessionfol'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
