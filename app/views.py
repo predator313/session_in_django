@@ -9,6 +9,7 @@ def setsession(request):
 def getsession(request):
     if 'name' in request.session:
         name=request.session['name']
+        request.session.modified=True
         return render(request,'app/getsession.html',{'name':name})
     else:
         return HttpResponse('hey your session is expired')
